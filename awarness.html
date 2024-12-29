@@ -1,0 +1,159 @@
+<html>
+<head>
+  <title>Image Slider</title>
+  <style>
+    body{
+      background: url("nnnnn.png");
+      background-size: cover;
+    }
+    .slider {
+      position: relative;
+      overflow: hidden; 
+      width: 80%; 
+      margin: auto; 
+      border-radius: 4%;
+    }
+
+   
+    .slider-track {
+      display: flex; 
+      transition: transform 0.5s ease-in-out;
+    }
+
+    
+    .slide {
+      min-width: 100%; 
+      flex-shrink: 0; 
+    }
+
+    .slide img {
+      width: 100%; 
+      display: block; 
+    }
+
+    
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .prev-btn {
+      left: 10px;
+    }
+
+    .next-btn {
+      right: 10px;
+    }
+    .navbar {
+            text-align: center;
+            background-color: #f31111;
+            padding: 15px;
+            font-size: 2em;
+            color: white;
+            border-radius: 4%;
+        }
+        .button {
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+.center-button {
+  
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: aqua;
+          margin: auto;
+          width: 50%;
+        }
+  </style>
+</head>
+<body>
+  <div class="navbar">AWARNESS!..</div>
+
+
+  <div class="slider">
+    <div class="slider-track">
+      <div class="slide">
+        <img src="image 1.jpg" alt="Slide 1" width="500" height="500">
+      </div>
+      <div class="slide">
+        <img src="image 2 (1).jpg" alt="Slide 2" width="500" height="500">
+      </div>
+      <div class="slide">
+        <img src="image 3.jpg" alt="Slide 3" width="500" height="500">
+      </div>
+    </div>
+    <button class="slider-btn prev-btn">❮</button>
+    <button class="slider-btn next-btn">❯</button>
+    </div>
+  
+  <button onclick="window.location.href='index.html';"  class="navbar">BACK</button>
+
+
+    
+
+  <script>
+    
+    const sliderTrack = document.querySelector('.slider-track');
+    const slides = document.querySelectorAll('.slide');
+    const prevButton = document.querySelector('.prev-btn');
+    const nextButton = document.querySelector('.next-btn');
+
+    let currentIndex = 0;
+
+    
+    function updateSliderPosition() {
+      const slideWidth = slides[0].offsetWidth; 
+      sliderTrack.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    }
+
+   
+    nextButton.addEventListener('click', () => {
+      if (currentIndex < slides.length - 1) {
+        currentIndex++;
+      } else {
+        currentIndex = 0;e
+      }
+      updateSliderPosition();
+    });
+
+    
+    prevButton.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+      } else {
+        currentIndex = slides.length - 1; 
+      }
+      updateSliderPosition();
+    });
+
+    
+    setInterval(() => {
+      if (currentIndex < slides.length - 1) {
+        currentIndex++;
+      } else {
+        currentIndex = 0;
+      }
+      updateSliderPosition();
+    }, 3000);
+  </script>
+</body>
+</html>
+

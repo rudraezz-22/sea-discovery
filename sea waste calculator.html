@@ -1,0 +1,88 @@
+<head>
+    <title>Coastal Destinations</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: black;
+        }
+        .navbar {
+            text-align: center;
+            background-color: #2193b0;
+            padding: 15px;
+            font-size: 2em;
+            color: white;
+            
+        }
+        .section {
+            padding: 20px;
+            margin: 20px 0;
+            background-color: white;
+        }
+        textarea {
+            width: 20%;
+            padding: 8px;
+            margin-top: 10px;
+            border-radius: 15px;
+            border: 1px solid #ccc;
+            height: 40px;
+        }
+        #result {
+            text-align: center;
+            font-size: 1.5em;
+            margin-top: 20px;
+            color: #333;
+        }
+        button {
+            background-color: #2193b0;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #1e78a7;
+        }
+        .calculate-btn {
+            background-color: #27AE60;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            display: block;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .calculate-btn:hover {
+            background-color: #2ECC71;
+        }
+        </style>
+        </head>
+        <body>
+            <div class="navbar">
+                SEA WASTE CALCULATOR
+            </div>
+            <div id="section1" class="section">
+                <label for="plastic"><h4>Enter plastic/metal waste in kg:</h4</label>
+                <textarea id="plastic" ></textarea>
+            </div>
+            <div id="section2" class="section">
+                <label for="organic"><h4>Enter organic waste in kg:</h4</label>
+                <textarea id="organic"></textarea>
+            </div>
+            <div id="section3" class="section">
+                <button class="calculate-btn" onclick="calculateWaste()">CALCULATE WASTE</button>
+            </div>
+            <p id="result"></p>
+            <button onclick="window.location.href='index.html';">BACK</button>
+            <script src="script.js"></script>
+        </body>
+        </html>
